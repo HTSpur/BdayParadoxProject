@@ -1,7 +1,8 @@
 import random
 
 
-bnum = input("How many birthdays should I generate for this test?")
+bnum = input("How many people's birthdays should I generate per instance?")
+
 
 months_dict = {
     "January": 31,
@@ -48,6 +49,15 @@ def dupe_tester():
             x = generate_birthdays(int(bnum))
             dupes += 1
 
+        if i == 100000: print("Finished!!!")
+
+        if i == 50000: print("50,000 tests ran...")
+
+        if i == 10000: print("10,000 tests ran...")
+
+
+
 
 dupe_tester()
-print(dupes)
+print("Out of 100,000 instances of " + bnum + " people, two or more people had the same birthday in..." )
+print(str(dupes) + " Instances!")
